@@ -10,23 +10,23 @@ import {
     UsePipes,
     ValidationPipe
 } from '@nestjs/common';
-import { CreateBlogPostDto } from './posts.dto';
-import { BlogPost } from './posts.entity';
-import { PostsService } from './posts.service';
+import { CreateBlogPostDto } from './post.dto';
+import { BlogPost } from './post.entity';
+import { PostService } from './post.service';
 
-@Controller('posts')
-export class PostsController {
-    constructor(private readonly postsService: PostsService) {}
+@Controller('post')
+export class PostController {
+    constructor(private readonly postService: PostService) {}
 
     @Post()
     @UsePipes(new ValidationPipe({ whitelist: true }))
     async create(@Body() createBlogPostDto: CreateBlogPostDto): Promise<BlogPost> {
-        return await this.postsService.create(createBlogPostDto);
+        return await this.postService.create(createBlogPostDto);
     }
 
     @Get()
     async findAll(@Req() request): Promise<BlogPost[]> {
-        return await this.postsService.findAll();
+        return await this.postService.findAll();
     }
 
     @Get(':id')
