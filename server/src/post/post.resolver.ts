@@ -1,4 +1,4 @@
-import { Query, Resolver, ResolveProperty } from '@nestjs/graphql';
+import { Query, Resolver, ResolveProperty, Mutation } from '@nestjs/graphql';
 import { PostService } from './post.service';
 
 @Resolver('Post')
@@ -8,8 +8,14 @@ export class PostResolver {
     ){}
 
     @Query('posts')
-    async getPost(obj, args, context, info) {
+    async getPosts(obj, args, context, info) {
        return await this.postService.findAll(); 
+    }
+
+    @Mutation()
+    async createPost(_, { title, content}) {
+        const data = { title, content }
+        return await this.postService.create(data)
     }
 
 }
