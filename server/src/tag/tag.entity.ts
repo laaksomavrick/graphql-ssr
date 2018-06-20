@@ -4,24 +4,21 @@ import {
     PrimaryGeneratedColumn,
     CreateDateColumn,
     UpdateDateColumn,
-    OneToMany
+    ManyToOne
 } from 'typeorm';
 
-import { Tag } from '../tag/tag.entity';
+import { Post } from '../post/post.entity';
 
 @Entity()
-export class Post {
+export class Tag {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ length: 256 })
-    title: string;
+    @Column({ length: 64 })
+    tag: string;
 
-    @Column('text')
-    content: string;
-
-    @OneToMany(type => Tag, tag => tag.post)
-    tags: Tag[];
+    @ManyToOne(type => Post, post => post.tags)
+    post: Post;
 
     @CreateDateColumn({ nullable: false })
     createdAt: Date;

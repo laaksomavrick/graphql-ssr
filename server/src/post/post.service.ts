@@ -11,11 +11,12 @@ export class PostService {
         private readonly postRepository: Repository<Post>
     ) {}
 
-    async findAll(): Promise<Post[]> {
-        console.log("here");
-        const results = await this.postRepository.find();
-        console.log(results)
-        return results
+    async findAll(args = {}): Promise<Post[]> {
+        return await this.postRepository.find(args);
+    }
+
+    async findOneById(id: number): Promise<Post> {
+        return await this.postRepository.findOne({ id })
     }
 
     async create(data: Object): Promise<Post> {

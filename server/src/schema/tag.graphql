@@ -1,0 +1,8 @@
+type Query {
+    tags(postId: Int!): [Tag]
+}
+
+type Tag {
+    id: Int!
+    tag: String!
+}
