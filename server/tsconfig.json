@@ -12,7 +12,8 @@
     "sourceMap": true,
     "allowJs": true,
     "outDir": "./dist",
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "jsx": "react"
   },
   "include": [
     "src/**/*"

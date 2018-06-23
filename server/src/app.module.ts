@@ -4,12 +4,14 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { graphqlExpress } from 'apollo-server-express';
 import { GraphQLModule, GraphQLFactory } from '@nestjs/graphql';
 import { PostModule } from './post/post.module';
+import { SsrModule } from './ssr/ssr.module';
 
 @Module({
     imports: [
         TypeOrmModule.forRoot(),
         GraphQLModule,
-        PostModule
+        PostModule,
+        SsrModule
     ],
     controllers: [],
     providers: []
