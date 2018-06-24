@@ -1,7 +1,8 @@
+import _ from 'dotenv'
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-const path = require('path');
 import { join } from 'path'
+const cors = require('cors')
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -9,6 +10,7 @@ async function bootstrap() {
     index: false,
     redirect: false
   });
-  await app.listen(3001);
+  app.use(cors())
+  await app.listen(process.env.NEST_PORT);
 }
 bootstrap();
