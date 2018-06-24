@@ -7,13 +7,15 @@
     "@types/react-router-dom": "^4.2.7",
     "apollo-boost": "^0.1.10",
     "apollo-cache-inmemory": "^1.2.5",
+    "bootstrap": "^4.1.1",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
     "react": "^16.4.1",
     "react-apollo": "^2.1.6",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts-ts": "2.16.0"
+    "react-scripts-ts": "2.16.0",
+    "reactstrap": "^6.1.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",

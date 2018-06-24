@@ -4,6 +4,7 @@ import {
   Switch
 } from 'react-router-dom';
 import Blog from '../Blog/Blog';
+import './App';
 
 export default function App(props: any, state: any) {
 
@@ -14,6 +15,6 @@ export default function App(props: any, state: any) {
         <Route path="/asd" exact={true} component={Blog} /> 
       </Switch>
     </div>
-  )
+  );
 
-}
+};

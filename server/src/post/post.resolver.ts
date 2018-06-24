@@ -26,6 +26,8 @@ export class PostResolver {
         return await this.postService.create(data)
     }
 
+    // TODO: createTag
+
     @ResolveProperty('tags')
     async getTags(post) {
         const { id } = post;

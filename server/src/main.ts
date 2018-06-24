@@ -6,7 +6,10 @@ const cors = require('cors')
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useStaticAssets(join(__dirname, '../../../client/build'), {
+
+  const assetPath = join(__dirname, '../../client/build')
+
+  app.useStaticAssets(assetPath, { 
     index: false,
     redirect: false
   });

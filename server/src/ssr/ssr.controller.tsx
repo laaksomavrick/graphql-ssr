@@ -30,6 +30,8 @@ export class SsrController {
     @Get()
     async handle(@Req() request) {
 
+        console.log("here")
+
         const paths = Routes.map(obj => Object.values(obj)[0])
 
         const match = paths.reduce((acc, route) =>
